@@ -2,6 +2,7 @@ package com.gympro.controller;
 
 import com.gympro.dto.SignupRequest;
 import com.gympro.entity.User;
+import com.gympro.entity.enums.Role;
 import com.gympro.repository.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +44,9 @@ public class AuthController {
         user.setPassword(
                 encoder.encode(signUpRequest.getPassword())
         );
+
+        // DEFAULT ROLE
+        user.setRole(Role.MEMBER);
 
         userRepository.save(user);
 
