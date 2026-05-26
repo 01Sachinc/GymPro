@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../../redux/slices/authSlice';
+import authService from '../../services/authService';
 import { Dumbbell, LogOut, User as UserIcon } from 'lucide-react';
 
 const Navbar = () => {
@@ -9,6 +10,7 @@ const Navbar = () => {
     const navigate = useNavigate();
 
     const handleLogout = () => {
+        authService.logout();
         dispatch(logout());
         navigate('/login');
     };

@@ -86,6 +86,10 @@ public class SecurityConfig {
                         ).permitAll()
 
                         .requestMatchers(
+                                "/api/plans/**"
+                        ).permitAll()
+
+                        .requestMatchers(
                                 "/api/test/**"
                         ).permitAll()
 

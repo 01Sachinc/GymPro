@@ -1,0 +1,26 @@
+# Build directories
+gympro-backend/target/
+gympro-frontend/dist/
+
+# Dependencies
+gympro-frontend/node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Local environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
