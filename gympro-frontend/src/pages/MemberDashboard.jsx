@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Activity, Flame, Heart, Target, ChevronRight, Loader2, Sparkles, Calendar, ShieldCheck } from 'lucide-react';
+import { Activity, Flame, Heart, Target, ChevronRight, Loader2, Sparkles, Calendar, ShieldCheck, Dumbbell } from 'lucide-react';
 import memberService from '../services/memberService';
 
 const MemberDashboard = () => {
@@ -26,7 +26,7 @@ const MemberDashboard = () => {
                 if (membershipData.status === 'fulfilled') {
                     setMembership(membershipData.value);
                 }
-                if (attendanceData.status === 'fulfilled') {
+                if (attendanceData.status === 'fulfilled' && Array.isArray(attendanceData.value)) {
                     const presentCount = attendanceData.value.filter(a => a.present).length;
                     setAttendanceCount(presentCount);
                 }
@@ -196,6 +196,27 @@ const MemberDashboard = () => {
                                 </button>
                             </div>
                         )}
+                    </div>
+
+                    {/* Club Info & Support */}
+                    <div className="glass-card p-6 bg-gradient-to-br from-indigo-500/5 to-transparent border-white/5 space-y-4">
+                        <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                            <Sparkles className="w-5 h-5 text-indigo-400" /> Club Access
+                        </h3>
+                        <div className="space-y-3 text-sm font-light text-slate-300">
+                            <div className="flex justify-between items-center bg-white/5 p-3 rounded-xl border border-white/5">
+                                <span className="text-slate-400">Club Hours</span>
+                                <span className="text-white font-semibold">24/7 Access</span>
+                            </div>
+                            <div className="flex justify-between items-center bg-white/5 p-3 rounded-xl border border-white/5">
+                                <span className="text-slate-400">Personal Coach</span>
+                                <span className="text-indigo-400 font-semibold">{recentWorkout?.trainerName || 'Coach Mike'}</span>
+                            </div>
+                            <div className="flex justify-between items-center bg-white/5 p-3 rounded-xl border border-white/5">
+                                <span className="text-slate-400">Support Desk</span>
+                                <span className="text-white font-semibold">+1 (800) 555-0199</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -11,6 +11,7 @@ import java.util.List;
 public interface WorkoutPlanMapper {
     @Mapping(source = "member.id", target = "memberId")
     @Mapping(source = "trainer.id", target = "trainerId")
+    @Mapping(source = "trainer.name", target = "trainerName")
     WorkoutPlanDto toDto(WorkoutPlan workoutPlan);
 
     @Mapping(source = "memberId", target = "member.id")
