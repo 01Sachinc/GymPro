@@ -44,12 +44,15 @@ The easiest way to get GymPro up and running is using Docker Compose.
 -   **Admin**: Manage users, plans, and global analytics.
 -   **Trainer**: Manage assigned members, create workout plans, and track attendance.
 -   **Member**: Dashboard overview, choose and purchase plans (Razorpay), track personal workouts.
+-   
 ## 🔒 Security
 -   JWT-based stateless authentication.
 -   Role-based access control (RBAC).
 -   Password hashing with BCrypt.
+-   
 ## 💳 Payment Integration
 -   Integrated with **Razorpay** SDK.
 -   Currently implements mock payment verification logic for demonstration.
 ---
+
 Crafted for excellence by GymPro Team.
