@@ -25,6 +25,9 @@ GymPro is a full-stack SaaS application for gym owners, trainers, and members. I
 ### Prometheus Server Starting up (Monitoring Server)
 ![Prometheus Server](./screenshots/prometheus_server.jpg)
 
+### Grafana Infrastructure Dashboard (Monitoring Server)
+![Grafana Dashboard](./screenshots/grafana_dashboard.jpg)
+
 ## 🚀 Quick Start with Docker
 
 The easiest way to get GymPro up and running is using Docker Compose.
@@ -72,7 +75,7 @@ The easiest way to get GymPro up and running is using Docker Compose.
 
 ## ☁️ Production AWS Deployment & Monitoring Architecture
 
-GymPro is designed for production deployment with dedicated instances on **Amazon Web Services (AWS) EC2** and system monitoring using **Prometheus**.
+GymPro is designed for production deployment with dedicated instances on **Amazon Web Services (AWS) EC2** and system monitoring using **Prometheus** and **Grafana**.
 
 ### 🏗️ AWS Cloud Infrastructure
 - **Application Server (`application`)**:
@@ -96,10 +99,11 @@ Preconfigured users list includes roles:
 - **Trainer**: `trainer@gympro.com`
 - **Members**: `member@gympro.com`, `cssachin83@gmail.com`, `priya@gmail.com`, `keerthanadhanush005@gmail.com`, `priyamudhole7@gmail.com`
 
-### 📊 System Monitoring (Prometheus & Node Exporter)
+### 📊 System Monitoring (Prometheus, Grafana & Node Exporter)
 To ensure high availability and performance:
 1. **Node Exporter**: Running on the application server at `http://65.2.130.117:9100/metrics`, exposing system-level and Go/application runtime performance metrics.
 2. **Prometheus Server**: Running on the monitoring server (`172.31.3.180`), scraping performance logs from the application server to analyze CPU, memory, database load, and network health.
+3. **Grafana Dashboard**: Hosted on the monitoring server at `http://13.206.194.179:3000`, visualizing hardware metrics (CPU utilization, RAM consumption, disk space, network traffic) using the *Node Exporter Full* dashboard in real-time.
 ---
 
 Crafted for excellence by GymPro Team.
