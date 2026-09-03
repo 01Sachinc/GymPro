@@ -10,7 +10,6 @@ GymPro is a full-stack SaaS application for gym owners, trainers, and members. I
 ### Backend API Documentation (Swagger)
 ![GymPro Backend](./screenshots/backend_swagger.png)
 
-
 ### Production MySQL Database (AWS)
 ![MySQL Database](./screenshots/mysql_database.jpg)
 
