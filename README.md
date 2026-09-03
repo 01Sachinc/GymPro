@@ -4,7 +4,6 @@ GymPro is a full-stack SaaS application for gym owners, trainers, and members. I
 
 ## 📸 Screenshots
 
-
 ### Premium Frontend Dashboard
 ![GymPro Frontend](./screenshots/frontend.png)
 
